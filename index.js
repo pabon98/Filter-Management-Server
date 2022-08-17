@@ -80,13 +80,20 @@ async function run(){
              res.json(result)
         })
 
-        //DELETE API for deleting filter
+        //DELETE API for deleting favourite filter
         app.delete('/favouritefilters/:id', async(req,res)=>{
          const id = req.params.id
          const query ={_id: ObjectId(id)}
          const result = await favouritefilterCollection.deleteOne(query)
         //  console.log('deleting filters id', id)
          res.json(result)
+        })
+        //DELETE API for deleting filter
+        app.delete('/filters/:id', async(req,res)=>{
+            const id = req.params.id
+            const query = {_id: ObjectId(id)}
+            const result = await filtersCollection.deleteOne(query)
+            res.json(result)
         })
     }
     finally {
