@@ -103,7 +103,7 @@ async function run(){
 run().catch(console.dir)
 
 app.get("/", (req, res) => {
-    res.send("running my filter server");
+    res.send("Running filter server");
   });
   
   app.listen(port, () => {
